@@ -1,0 +1,1 @@
+export const USERS_ROUTE_PREFIX = '/users';
