@@ -1,7 +1,8 @@
 import fastify from 'fastify';
 import cookie from '@fastify/cookie';
 import { userRoutes } from './routes/users';
-import { USERS_ROUTE_PREFIX } from './constants/routes.constants';
+import { MEALS_ROUTE_PREFIX, USERS_ROUTE_PREFIX } from './constants/routes.constants';
+import { mealsRoutes } from './routes/meals';
 
 export const app = fastify();
 
@@ -13,4 +14,8 @@ app.addHook('preHandler', async(request) => {
 
 app.register(userRoutes, {
     prefix: USERS_ROUTE_PREFIX
+});
+
+app.register(mealsRoutes, {
+    prefix: MEALS_ROUTE_PREFIX
 });
